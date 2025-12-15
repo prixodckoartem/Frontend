@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <link rel="stylesheet" href="/Web/Weather/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-cloud-sun"></i> Прогноз погоды</h1>
+        </header>
+
+        <main class="main-content">
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" 
+                           id="city-input" 
+                           placeholder="Введите название города..."
+                           value="Москва">
+                    <button id="search-btn" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Найти
+                    </button>
+                    <button id="location-btn" class="btn btn-secondary">
+                        <i class="fas fa-location-arrow"></i> Мое местоположение
+                    </button>
+                </div>
+                
+                <div class="quick-cities">
+                    <p>Быстрый выбор:</p>
+                    <div class="city-tags">
+                        <button class="city-tag" data-city="Москва">Москва</button>
+                        <button class="city-tag" data-city="Санкт-Петербург">Санкт-Петербург</button>
+                        <button class="city-tag" data-city="Новосибирск">Новосибирск</button>
+                        <button class="city-tag" data-city="Екатеринбург">Екатеринбург</button>
+                        <button class="city-tag" data-city="Сочи">Сочи</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="weather-container" class="weather-container">
+                               <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Загрузка данных о погоде...</p>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h2><i class="fas fa-calendar-alt"></i> Прогноз на 5 дней</h2>
+                <div id="forecast-container" class="forecast-container">
+                                   </div>
+            </div>
+        </main>
+    </div>
+
+       <div id="error-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> Ошибка</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="error-message"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-ok-btn" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Web/Weather/weather.js"></script>
+    <script src="/Web/Weather/app.js"></script>
+</body>
+</html>
